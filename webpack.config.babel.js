@@ -1,6 +1,5 @@
 const TerserPlugin = require("terser-webpack-plugin")
 const libraryNamePlugin = 'vue3-helloworld-webpack';
-const { VueLoaderPlugin } = require("vue-loader");
 
 const appConfig = {
   entry: {
@@ -20,8 +19,7 @@ const appConfig = {
     rules: [
         {
           test: /(\.jsx|\.js)$/,
-          loader: 'vue-loader',
-          // loader: 'babel-loader',
+          loader: 'babel-loader',
           exclude: /(node_modules|bower_components)/
         },
       {
@@ -31,11 +29,6 @@ const appConfig = {
       }
     ]
   },
-
-  plugins: [
-    new VueLoaderPlugin(),
-  
-  ],
 
   optimization: {
     minimize: true,
